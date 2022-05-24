@@ -1,0 +1,4 @@
+[core]
+    remote = dvc-remote
+['remote "dvc-remote"']
+    url = gdrive://1llq7RGHQFa2wD4CKj8CcYHZl4oFgwx0x
