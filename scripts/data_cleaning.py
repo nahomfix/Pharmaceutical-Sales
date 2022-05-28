@@ -51,3 +51,9 @@ class DataCleaner:
         self.dataframe = self.dataframe.loc[
             (self.dataframe["Open"] != 0) & (self.dataframe["Sales"] != 0)
         ]
+
+    def fill_missing_column_zero(self, column: str) -> None:
+        self.dataframe[column] = self.dataframe[column].fillna(0)
+
+    def fill_missing_empty_string(self, column: str) -> None:
+        self.dataframe[column] = self.dataframe[column].fillna("")
