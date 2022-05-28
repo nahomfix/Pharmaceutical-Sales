@@ -26,6 +26,14 @@ class DataCleaner:
             columns=numeric_columns.columns,
         )
 
+    def fill_missing_mode(self, column: str) -> None:
+        impute_mode = SimpleImputer(
+            strategy="most_frequent", missing_values=np.nan
+        )
+        self.dataframe[column] = impute_mode.fit_transform(
+            self.dataframe[[column]]
+        )
+
     def scale_dataframe(self) -> None:
         scaler = StandardScaler()
         numeric_columns = self.dataframe.select_dtypes(include="number")
