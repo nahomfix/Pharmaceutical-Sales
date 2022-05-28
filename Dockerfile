@@ -2,8 +2,14 @@ FROM python:3.9-alpine
 
 WORKDIR /app
 
-COPY . /app
+COPY requirements.txt ./requirements.txt
 
 RUN pip install -r requirements.txt 
 
-CMD ["streamlit", "run", "app.py"]
+EXPOSE 8501
+
+COPY . ./app
+
+ENTRYPOINT ["streamlit", "run"]
+
+CMD ["app.py"]
