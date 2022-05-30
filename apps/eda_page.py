@@ -1,28 +1,10 @@
-import os
-
-import pandas as pd
 import streamlit as st
-
-pwd = os.getcwd()
-train_file_path = os.path.join(pwd, "data/train.csv")
-store_file_path = os.path.join(pwd, "data/store.csv")
 
 
 def app():
     st.title("Insights")
 
-    df_train = pd.read_csv(
-        train_file_path, dtype={"StateHoliday": object}, parse_dates=["Date"]
-    )
-    df_store = pd.read_csv(store_file_path)
-
-    df_train_store = pd.merge(df_train, df_store, how="left", on="Store")
-
-    df_train_store_copy = df_train_store.copy()
-
-    st.write(
-        f'Rossmann has {df_train_store_copy["Store"].nunique()} stores across 6 different locations'
-    )
+    st.write(f"Rossmann has 1115 stores across 6 different locations")
 
     st.subheader("Distribution")
 
