@@ -5,7 +5,7 @@ import streamlit as st
 from joblib import load
 
 pwd = os.getcwd()
-random_forest_model = os.path.join(pwd, "models/2022-05-28-17-13-16.pkl")
+random_forest_model = os.path.join(pwd, "models/2022-05-30-19-29-52.pkl")
 lstm_model = os.path.join(pwd, "models/LSTM-2022-05-28-19-43-27.pkl")
 
 
