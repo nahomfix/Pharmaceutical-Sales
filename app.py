@@ -1,5 +1,3 @@
-from turtle import tilt
-
 import streamlit as st
 
 from apps import eda_page, file_upload, home_page
